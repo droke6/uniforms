@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        PSA Uniforms
-    </h1>
+    <div class="title">
+        <h1>Welcome to PSA Uniforms</h1>
+        <h2>Let's start with one simple question. Do you have a DaySmart account?</h2>
+    
+        <div class="daysmart">
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
 
     <div class="login">
-        <input type="email">
-        <input type="password">
+        <div class="credentials">
+            <div>
+            <label for="email">Email Address: </label>
+            <input type="email">
+            </div>
+            
+            <div class="password">
+            <label for="password">Password:</label>
+            <input type="password">
+            </div>
+        </div>
+
+        <button id="submit-button">Submit</button>
     </div>
+
+    
 
 
 </body>
