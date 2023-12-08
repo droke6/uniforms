@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.login {
+.credentials {
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -14,8 +14,8 @@
     margin: auto;
 }
 
-.credentials {
-    display: flex;
+#credentials {
+    display: none;
     flex-direction: column;
     align-items:flex-start;
     padding: 20px;
@@ -53,3 +53,7 @@
     height: auto;
 }
 
+#refresh-message {
+    display: none;
+    text-align: center;
+}
