@@ -16,5 +16,9 @@
     "shop"
   ],
   "author": "Daniel Roque",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^8.0.3",
+    "mysql": "^2.18.1"
+  }
 }
