@@ -1,74 +1,52 @@
+const express = require('express');
 const mysql = require('mysql');
-const bcrypt = require('bcryptjs');
-const dbConfig = {
-    host: Dannys-Air.lan,
-    user: Droke,
-    password: 'Droke7741!',
-    database: CREDENTIALS
-}
-const pool = mysql.createPool(dbConfig);
+const bodyParser = require('body-parser');
 
-function getUserByEmail(email, callback) {
-    pool.query('SELECT * FROM users WHERE email = ?', [email], (err, results) => {
-      if (err) {
-        return callback(err);
-      }
-      return callback(null, results[0]); // Assuming the email is unique, returning the first result
-    });
+const app = express();
+const port = 3000; // Change this to your desired port number
+const db = mysql.createConnection({
+  host: Dannys-Air.lan, // Your MySQL host
+  user: Droke,
+  password: Droke7741!,
+  database: Credentials,
+});
+
+// Connect to MySQL
+db.connect((err) => {
+  if (err) {
+    throw err;
   }
+  console.log('MySQL connected');
+});
 
-  app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    
-    getUserByEmail(email, (err, user) => {
-      bcrypt.hash(password, 10, (hashErr, hashedPassword) => {
-        if (hashErr) {
-          return res.status(500).json({ error: 'Hashing error' });
-        }
+// Middleware to parse incoming requests with JSON payloads
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-      if (err) {
-        // Handle database error
-        return res.status(500).json({ error: 'Database error' });
-      }
-      
-      if (!user) {
-        // User not found in the database
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
-  
-      // Compare hashed password from the database with the provided password using bcrypt
-      // Check password validity and handle successful authentication
-      // This part will involve password comparison using bcrypt, which is not detailed here
-    });
-  });
+// Serve static files (like HTML, CSS, JS)
+app.use(express.static('public')); // Assuming your HTML file is in the 'public' folder
 
-// Your existing getUserByEmail function remains unchanged
-
+// Handle login POST request
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
-  getUserByEmail(email, (err, user) => {
+  // Check the database for the provided credentials
+  const sql = `SELECT * FROM users WHERE email = ? AND password = ?`;
+  db.query(sql, [email, password], (err, result) => {
     if (err) {
-      return res.status(500).json({ error: 'Database error' });
+      res.status(500).send('Internal Server Error');
+      throw err;
     }
 
-    if (!user) {
-      return res.status(401).json({ error: 'Invalid credentials' });
+    if (result.length > 0) {
+      res.status(200).send('Login successful'); // You can send a success message or redirect to a new page here
+    } else {
+      res.status(401).send('Invalid credentials'); // Unauthorized status code for incorrect credentials
     }
-
-    // Compare hashed password from the database with the provided password using bcrypt
-    bcrypt.compare(password, user.password, (bcryptErr, result) => {
-      if (bcryptErr) {
-        return res.status(500).json({ error: 'Bcrypt error' });
-      }
-
-      if (result) {
-        // Passwords match, user authenticated
-        return res.status(200).json({ message: 'Login successful' });
-      } else {
-        // Passwords don't match
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
-    });
   });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
