@@ -57,4 +57,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
       document.body.appendChild(errorMessage);
     });
   });
+
+
+  // Connect the login function to the login button click event
+  document.getElementById('loginButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    // Trigger form submission when login button is clicked
+    document.getElementById('loginForm').submit();
+  });
   
