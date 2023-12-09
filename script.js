@@ -46,7 +46,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   
       // Redirect or display user information upon successful login
       // Replace 'dashboard.html' with your desired authenticated area
-      window.location.href = 'dashboard.html';
+      window.location.href = 'sample.html';
     })
     .catch(error => {
       // Handle error or display error message to the user
