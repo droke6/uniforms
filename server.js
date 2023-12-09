@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const dbConfig = {
     host: Dannys-Air.lan,
     user: root,
-    password: Droke7741,
+    password: Droke7741!,
     database: CREDENTIALS
 }
 const pool = mysql.createPool(dbConfig);

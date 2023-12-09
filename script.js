@@ -53,7 +53,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
       console.error('Error:', error.message);
       // Example: Display error message on the frontend
       const errorMessage = document.createElement('div');
-      errorMessage.textContent = 'Login failed. Please check your credentials.';
+      errorMessage.textContent = 'Login failed. Please check your credentials and try again.';
       document.body.appendChild(errorMessage);
     });
   });
