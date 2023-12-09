@@ -1,19 +1,11 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//     let credentials = document.getElementById('credentials');
-//     let yesButton = document.getElementById('yes');
-//     let noButton = document.getElementById('no');
-//     let refresh = document.getElementById('refresh-message')
+document.addEventListener('DOMContentLoaded', function() {
+    let new_account = document.getElementById('new-account-button');
 
-//     yesButton.addEventListener('click', function() {
-//         credentials.style.display = 'block';
-//     });
+    new_account.addEventListener('click', function() {
+        window.open('https://apps.daysmartrecreation.com/dash/index.php?action=Auth/start&company=psa#/', '_blank');
+    });
 
-//     noButton.addEventListener('click', function() {
-//         window.open('https://apps.daysmartrecreation.com/dash/index.php?action=Auth/start&company=psa#/', '_blank');
-//         refresh.style.display = 'block';
-        
-//     });
-// });
+});
 
 // Function to handle login form submission
 document.getElementById('loginForm').addEventListener('submit', function(event) {
