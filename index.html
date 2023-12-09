@@ -4,38 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>PSA Uniform Shop</title>
 </head>
 <body>
     <div class="title">
-        <h1>Welcome to PSA Uniforms</h1>
-        <h2>Let's start with one simple question. Do you have a DaySmart account?</h2>
+        <div class="left-section">
+            <h3><a href="https://droke6.github.io/uniforms/">PSA Uniforms</a></h3>
+        </div>
+        <div class="right-section">
+            <div class="title-links">
+                <h3><a href="https://www.psaplano.org/Home.aspx" target="_blank">PSA</a></h3>
+                <h3><a href="https://www.psaplano.org/Home/PSAShop.aspx" target="_blank">Uniform Info</a></h3>
+            </div>
+        </div>
     
-        <div class="daysmart">
+        <!-- <div class="daysmart">
             <button id="yes">Yes</button>
             <button id="no">No</button>
-        </div>
+        </div> -->
+    </div>
+
+    <div class="logo">
+        <img src="logo.PNG" alt="logo" width="200px" height="auto">
     </div>
 
     <div id="credentials">
         <div class="credentials">
             <div>
-            <label for="email">Email Address: </label>
-            <input type="email">
+            <label for="email"></label>
+            <input type="email" id="email" placeholder="Email Address">
             </div>
             
             <div class="password">
-            <label for="password">Password:</label>
-            <input type="password">
+            <label for="password"></label>
+            <input type="password" id="password" placeholder="Password">
             </div>
 
-        <button id="submit-button">Submit</button>
+        <button id="login-button">Login</button>
+
+        <h4><a href="https://apps.daysmartrecreation.com/dash/index.php?Action=forgotpw&cid=psa" target="_blank">Forgot Password?</a></h4>
+        
+            <div>
+                <h2 id="new-account">Don't have a DaySmart Account?</h2>
+                <button id="new-account-button">Create one here.</button>
+            </div>
+
         </div>
 
-        <div id="refresh-message">
-            <h3>Please refresh this page after you create your DaySmart account.</h3>
-        </div>
     </div>
+
+    <hr>
+    <h2>Plano Sports Authority</h2>
 
 <script src="script.js"></script>
 

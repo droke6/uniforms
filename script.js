@@ -11,5 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     noButton.addEventListener('click', function() {
         window.open('https://apps.daysmartrecreation.com/dash/index.php?action=Auth/start&company=psa#/', '_blank');
         refresh.style.display = 'block';
+        
     });
 });
