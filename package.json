@@ -1,0 +1,20 @@
+{
+  "name": "uniforms",
+  "version": "1.0.0",
+  "description": "credentials to login into uniform website",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://droke6.github.io/uniforms/"
+  },
+  "keywords": [
+    "psa",
+    "uniform",
+    "shop"
+  ],
+  "author": "Daniel Roque",
+  "license": "MIT"
+}
